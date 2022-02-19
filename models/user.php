@@ -64,13 +64,31 @@ class user extends Db{
             if(password_verify($password, $row['password'])){
                 echo 'success';
             }else {
-                echo 'Password incorrect';
+                echo 'Password Incorrect';
             }
 
         }else {
             echo 'All Fields are required';
         }
     }
+
+
+    public function getadmin($email,$password){
+        if(!empty($email) && !empty($password)){
+            $sql2 = "SELECT * FROM `admin` WHERE email = '{$email}'";
+            $query1 = $this->connect()->query($sql2);
+            $rows = $query1->fetch_assoc();
+    
+                if(password_verify($password, $rows['password'])){
+                    echo 'admin';
+                }else {
+                    echo 'Password Incorrect';
+                }
+        }else {
+            echo 'All Fields are required';
+        }
+    }
+    
 
 
 

@@ -27,7 +27,7 @@
 			<!-- on add button click hide form  -->
 			<div class="bg-white shadow-lg w-1/2 h-96  fixed mr-40 top-52 flex items-center justify-center invisible rounded-md" id="formPopUp">
 				<div class="space-x-3 w-4/5 space-y-4 flex">
-					<form class="w-full" id="actionForm">
+					<form class="w-full" id="actionForm" enctype="multipart/form-data">
 						<div class="w-full flex items-center justify-around flex-wrap py-4">
 							<input type="text" placeholder="Flight Number" 
 							class="px-10 w-80 py-2 rounded-md outline-none border-2 focus:border-lime-500 mb-2 mt-2" name="FlightNumber">
@@ -159,9 +159,9 @@
 								</td>
 								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                     <button class="bg-green-300 px-4 py-2 rounded-md text-green-800 font-semibold tracking-wide cursor-pointer" id="PopForm" >Add</button>
-                                    <button  <?php echo 'onclick="SendId('.$rows['id'].')"' ?> class="bg-orange-200 px-4 py-2 rounded-md text-orange-900 font-semibold tracking-wide cursor-pointer" id="UpdateFlightsForm">Update</button>
-									
-                                    <button class="bg-red-500 px-4 py-2 rounded-md text-red-900 font-semibold tracking-wide cursor-pointer" id="RemoveFlights">Remove</button>
+                                    <button class="bg-orange-200 px-4 py-2 rounded-md text-orange-900 font-semibold tracking-wide cursor-pointer" id="UpdateFlightsForm">Update</button>
+									<input type="text" value="<?php echo $rows['id']?>" id="flight_id">
+                                    <a href="<?= $router->generate('flighList')?>" class="bg-red-500 px-4 py-2 rounded-md text-red-900 font-semibold tracking-wide cursor-pointer" id="RemoveFlights">Remove</a>
 								</td> 
 
 							</tr>

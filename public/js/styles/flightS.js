@@ -6,6 +6,9 @@ const RemoveFlights = document.getElementById('RmvFlights')
 const addFlights = document.querySelectorAll('#addFlight')
 const UpdateForm = document.querySelectorAll('#UpdateFlightsForm')
 const RemoveForm = document.querySelectorAll('#RemoveFlights')
+const flight_id = document.querySelectorAll('#flight_id')
+
+// var id;
 
     
 addFlight.addEventListener('click', ()=> {
@@ -20,12 +23,23 @@ for (let i = 0; i < PopForm.length; i++) {
         RemoveFlights.style.display = 'none'
     })    
 }
+// function SendId(e){
+//     id =  e
+    
+// }
 for (let i = 0; i < UpdateForm.length; i++) {
+    let unique_flight_id = flight_id[i].value
+
     UpdateForm[i].addEventListener('click', ()=> {
+        // console.log(unique_flight_id);
         formPopUp.style.visibility = 'visible'
         RemoveFlights.style.display = 'none'
         addFlight.style.display = 'none'
+        document.cookie = `Flight_id=${unique_flight_id}`
+        
     })    
+
+
 }
 
 

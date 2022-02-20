@@ -20,6 +20,7 @@
     $router->map('POST', '/addFlight', 'requests/addFlight');
     $router->map('POST', '/updateFlights', 'requests/updateFlights');
     $router->map('POST', '/removeFlights', 'requests/removeFlights');
+    $router->map('POST', '/search', 'requests/search');
     
 
 

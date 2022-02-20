@@ -67,7 +67,7 @@
 						d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
 						clip-rule="evenodd" />
 				</svg>
-				<input class="bg-gray-50 outline-none ml-1 block " type="text" name="" id="" placeholder="search...">
+				<input class="bg-gray-50 outline-none ml-1 block " type="text" name="" id="searchFlightAdmin" placeholder="search...">
           </div>
 				<div class="lg:ml-40 ml-10 space-x-8">
 					<!-- <button class="bg-indigo-600 px-4 py-2 rounded-md text-white font-semibold tracking-wide cursor-pointer">New Report</button> -->
@@ -115,7 +115,7 @@
 								</th>
 							</tr>
 						</thead>
-						<tbody>
+						<tbody  id="tbody">
 							<?php
 
 							if($numRows > 0){
@@ -160,7 +160,7 @@
 								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                     <button class="bg-green-300 px-4 py-2 rounded-md text-green-800 font-semibold tracking-wide cursor-pointer" id="PopForm" >Add</button>
                                     <button class="bg-orange-200 px-4 py-2 rounded-md text-orange-900 font-semibold tracking-wide cursor-pointer" id="UpdateFlightsForm">Update</button>
-									<input type="text" value="<?php echo $rows['id']?>" id="flight_id">
+									<input type="text" value="<?php echo $rows['id']?>" id="flight_id" type="hidden" class="hidden">
                                     <a href="<?= $router->generate('flighList')?>" class="bg-red-500 px-4 py-2 rounded-md text-red-900 font-semibold tracking-wide cursor-pointer" id="RemoveFlights">Remove</a>
 								</td> 
 
@@ -199,6 +199,7 @@
 	<script src="../public/js/flight.js"></script>
 	<script src="../public/js/FlightAction.js"></script>
 	<script src="../public/js/styles/flightS.js"></script>
+	<script src="../public/js/search.js"></script>
 </body>
 </html>
 

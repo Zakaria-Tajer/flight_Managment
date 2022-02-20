@@ -81,6 +81,16 @@ class flightController {
         
         return $getF;
     }
+    public function searchFlight(){
+        $flight  = new flight();
+        
+        // $flight_id = $_COOKIE['Flight_id'];
+        $SearchValue = $_POST['SearchValue'];
+
+        $getF = $flight->getSearchFlight($SearchValue);
+        
+        return $getF;
+    }
 
 
 

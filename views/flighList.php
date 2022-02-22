@@ -3,10 +3,11 @@
     include 'autoload.php';
     include 'includes/header.inc.php';
 
+	if(!isset($_SESSION['id'])){
+		header("location: /login");
+	}
 	
-
     $user = new flightController();
-
 
     $data = $user->getFlightsData();
 
@@ -76,7 +77,7 @@
 			</div>
 		</div>
 		<div class="ml-20">
-			<div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto w-11/12 ">
+			<div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto w-11/12 md:min-w-full">
 				<div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
 					<table class="min-w-full leading-normal">
 						<thead>
@@ -157,11 +158,11 @@
 										<?php echo $rows['status']?>
 									</p>
 								</td>
-								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <button class="bg-green-300 px-4 py-2 rounded-md text-green-800 font-semibold tracking-wide cursor-pointer" id="PopForm" >Add</button>
-                                    <button class="bg-orange-200 px-4 py-2 rounded-md text-orange-900 font-semibold tracking-wide cursor-pointer" id="UpdateFlightsForm">Update</button>
+								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm ">
+                                    <button class="bg-green-300 px-4 py-2 rounded-md text-green-800 font-semibold tracking-wide cursor-pointer md:mb-1" id="PopForm" >Add</button>
+                                    <button class="bg-orange-200 px-4 py-2 rounded-md text-orange-900 font-semibold tracking-wide cursor-pointer md:mb-[10px]" id="UpdateFlightsForm">Update</button>
 									<input type="text" value="<?php echo $rows['id']?>" id="flight_id" type="hidden" class="hidden">
-                                    <a href="<?= $router->generate('flighList')?>" class="bg-red-500 px-4 py-2 rounded-md text-red-900 font-semibold tracking-wide cursor-pointer" id="RemoveFlights">Remove</a>
+                                    <a href="<?= $router->generate('flighList')?>" class="bg-red-500 px-4 py-2 rounded-md text-red-900 font-semibold tracking-wide cursor-pointer md:translate-y-4" id="RemoveFlights">Remove</a>
 								</td> 
 
 							</tr>

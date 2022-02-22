@@ -29,14 +29,14 @@ class user extends Db{
                                 $sql3 = "SELECT * FROM `userreservation` WHERE email = '{$email}'";
                                 $query1 = $this->connect()->query($sql3);
                                 $numberRows = $query1->num_rows;
-                                if($numberRows){
+                                if($numberRows > 0){
                                     $row = $query1->fetch_assoc();
                                     $_SESSION['unique_id'] = $row['unique_id'];
-
+                                    
                                     echo 'succes';
                                 }
                             }else {
-                                echo 'failed';
+                                echo 'z';
                             }
                             
                         }else {
@@ -57,37 +57,59 @@ class user extends Db{
         if(!empty($email) && !empty($password)){
             $sql = "SELECT * FROM `userreservation` WHERE email = '{$email}'";
             $query = $this->connect()->query($sql);
-            // $numrows = $query->num_rows;
-            
-            $row = $query->fetch_assoc();
+            $numrows = $query->num_rows;
 
-            if(password_verify($password, $row['password'])){
-                echo 'success';
-            }else {
-                echo 'Password Incorrect';
+                if($numrows > 0){
+                    $row = $query->fetch_assoc();
+                    if(password_verify($password, $row['password'])){
+                        echo 'success';
+                        $_SESSION['unique_id'] = $row['unique_id'];
+
+                    }else {
+                        echo 'Password Incorrect';
+                    }
+                }
+            
+
+                $sql4 = "SELECT * FROM `admin` WHERE email = '{$email}'";
+                $query4 = $this->connect()->query($sql4);
+    
+                $rowsN = $query4->num_rows;
+    
+                if($rowsN > 0){
+                    $rows = $query4->fetch_assoc();
+                    if(password_verify($password, $rows['password'])){
+                        $_SESSION['id'] = $rows['id'];
+                        echo 'admin';
+
+                    }
+                
             }
 
+
+
+
         }else {
             echo 'All Fields are required';
         }
     }
 
 
-    public function getadmin($email,$password){
-        if(!empty($email) && !empty($password)){
-            $sql2 = "SELECT * FROM `admin` WHERE email = '{$email}'";
-            $query1 = $this->connect()->query($sql2);
-            $rows = $query1->fetch_assoc();
+    // public function getadmin($email,$password){
+    //     if(!empty($email) && !empty($password)){
+    //         $sql2 = "SELECT * FROM `admin` WHERE email = '{$email}'";
+    //         $query1 = $this->connect()->query($sql2);
+    //         $rows = $query1->fetch_assoc();
     
-                if(password_verify($password, $rows['password'])){
-                    echo 'admin';
-                }else {
-                    echo 'Password Incorrect';
-                }
-        }else {
-            echo 'All Fields are required';
-        }
-    }
+    //             if(password_verify($password, $rows['password'])){
+    //                 echo 'admin';
+    //             }else {
+    //                 echo 'Password Incorrect';
+    //             }
+    //     }else {
+    //         echo 'All Fields are required';
+    //     }
+    // }
     
 
 

@@ -29,19 +29,6 @@ class userController {
         return $login;
     }
 
-    public function adminlogin(){
-        $user = new user();
-
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-
-        $login = $user->getadmin($email, $password);
-
-        return $login;
-    }
-
-
-
 
 
 

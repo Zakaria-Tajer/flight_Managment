@@ -1,4 +1,4 @@
-<div class="w-[110px] h-screen bg-white flex flex-col items-center space-y-4">
+<div class="w-[110px] md:px-10 sm:px-10 h-screen flex flex-col items-center space-y-4 relative">
     <div class="w-20 h-20 rounded-full bg-gray-300 flex items-center justify-center mt-10 mb-14">
         <img src="#" alt="">
         <h1>Logo</h1>
@@ -17,7 +17,12 @@
             </div>
         </li>            
     </ul>
+    <div class="absolute bottom-10 flex items-center space-x-2 py-2 bg-indigo-600 px-10 rounded-lg cursor-pointer" id="logout">
+        <h2 class="text-lg text-white font-mono">Logout</h2>
+        <i class="fa-solid fa-arrow-right-from-bracket text-lg text-white"></i>
+    </div>
 </div>
 <script src="https://kit.fontawesome.com/f821dddf9d.js" crossorigin="anonymous"></script>
 <script src="../public/js/styles/index.js"></script>
+<script src="../public/js/logout.js"></script>
 

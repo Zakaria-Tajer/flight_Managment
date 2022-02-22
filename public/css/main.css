@@ -1,0 +1,19 @@
+#container.active {
+    display: block;
+}
+#showMenu.active {
+    display: flex;
+}
+#showMenus.active {
+    display: flex;
+}
+
+#Chevronup.active {
+    display: flex;
+}
+#down.active {
+    display: none;
+}
+/* .hide {
+    visibility: hidden;
+} */

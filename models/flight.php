@@ -50,11 +50,19 @@ class flight extends Db{
         return $query;
     }
     public function getSearchFlight($searchTerm){
-        $sql = "SELECT * FROM `flights` WHERE (FlighNumber LIKE '%{$searchTerm}%' OR ArrivalAirport LIKE '%{$searchTerm}%')";
+        $sql = "SELECT * FROM `flights` WHERE (FlighNumber LIKE '%{$searchTerm}%' OR ArrivalAirport LIKE '%{$searchTerm}%' OR airline LIKE '%{$searchTerm}%')";
         $query = $this->connect()->query($sql);
 
         return $query;
     }
+    public function getUserSearchFlights($searchTerm){
+        $sql = "SELECT * FROM `flights` WHERE (FlighNumber LIKE '%{$searchTerm}%' OR ArrivalAirport LIKE '%{$searchTerm}%' OR airline LIKE '%{$searchTerm}%')";
+        $query = $this->connect()->query($sql);
+
+        return $query;
+    }
+
+    
 
     
 

@@ -4,12 +4,12 @@
         <h1>Logo</h1>
     </div>
     <ul class="space-y-8 z-20">
-        <li class="relative cursor-pointer" id="containerIcons">
+        <!-- <li class="relative cursor-pointer" id="containerIcons">
             <div class="flex">
                 <i class="fa-solid fa-house text-xl text-gray-300 py-4 px-7 rounded-md  bg-white shadow-md hover:text-black hover:bg-[#F1F1F1]"></i>
                 <a href="<?= $router->generate('home') ?>" class="absolute text-center translate-x-20 px-4 py-4 bg-white rounded-md hidden" id="dashboard">dashboard</a>
             </div>
-        </li>
+        </li> -->
         <li class="relative cursor-pointer" id="containerList">
             <div class="flex">
                 <i class="fa-solid fa-rectangle-list text-xl text-gray-300 py-4 px-7 rounded-md  bg-white shadow-md hover:text-black hover:bg-[#F1F1F1]"></i>

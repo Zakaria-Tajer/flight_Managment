@@ -49,6 +49,11 @@
                         </p>
                     </td>
                     <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                        <p class="text-gray-900 whitespace-no-wrap">
+                            '.$rows['price'].'
+                        </p>
+                    </td>
+                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                         <button class="bg-green-300 px-4 py-2 rounded-md text-green-800 font-semibold tracking-wide cursor-pointer" id="PopForm" >Add</button>
                         <button class="bg-orange-200 px-4 py-2 rounded-md text-orange-900 font-semibold tracking-wide cursor-pointer" id="UpdateFlightsForm">Update</button>
                         <input type="text" value="'.$rows['id'].'" id="flight_id" type="hidden" class="hidden">

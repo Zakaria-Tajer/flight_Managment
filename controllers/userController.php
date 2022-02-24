@@ -29,6 +29,16 @@ class userController {
         return $login;
     }
 
+    public function getSession(){
+        $user = new user();
+
+        $session = $_SESSION['unique_id'];
+        $data = $user->getUserPayment($session);
+
+        return $data;
+    }
+    
+   
 
 
 

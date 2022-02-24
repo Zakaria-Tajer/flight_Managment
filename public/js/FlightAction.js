@@ -4,9 +4,6 @@ const update = document.getElementById('UpdateFlights')
 const RmvFlights = document.querySelectorAll('#RemoveFlights')
 const flightCookieId = document.querySelectorAll('#flight_id')
 
-
-
-
 add.onclick = ()=> {
     const req = new XMLHttpRequest()
     req.onreadystatechange = async ()=> {

@@ -20,9 +20,7 @@
 <body>
     
     <div class="min-h-screen flex">
-        <?php
-            include 'includes/navbar.php';
-        ?>
+        
 	<div class="bg-[#EEF0F3] p-8 rounded-md w-full relative">
 		<div class="flex items-center justify-center">
 			<!-- on add button click hide form  -->
@@ -31,19 +29,21 @@
 					<form class="w-full" id="actionForm" enctype="multipart/form-data">
 						<div class="w-full flex items-center justify-around flex-wrap py-4">
 							<input type="text" placeholder="Flight Number" 
-							class="px-10 w-80 py-2 rounded-md outline-none border-2 focus:border-lime-500 mb-2 mt-2" name="FlightNumber">
+							class="px-10 w-80 py-2 rounded-md outline-none border-2 focus:border-indigo-600 mb-2 mt-2" name="FlightNumber">
 							<input type="text" placeholder="Depart Gate" 
-							class="px-10 w-80 py-2 rounded-md outline-none border-2 focus:border-lime-500 mb-2 mt-2" name="DepartGate">
+							class="px-10 w-80 py-2 rounded-md outline-none border-2 focus:border-indigo-600 mb-2 mt-2" name="DepartGate">
 							<input type="text" placeholder="Arrival" 
-							class="px-10 w-80 py-2 rounded-md outline-none border-2 focus:border-lime-500 mb-2 mt-2" name="ArrivalPlane">
+							class="px-10 w-80 py-2 rounded-md outline-none border-2 focus:border-indigo-600 mb-2 mt-2" name="ArrivalPlane">
 							<input type="text" placeholder="Seats Number" 
-							class="px-10 w-80 py-2 rounded-md outline-none border-2 focus:border-lime-500 mb-2 mt-2" name="SeatsCount">
+							class="px-10 w-80 py-2 rounded-md outline-none border-2 focus:border-indigo-600 mb-2 mt-2" name="SeatsCount">
 							<input type="text" placeholder="Aircraft" 
-							class="px-10 w-80 py-2 rounded-md outline-none border-2 focus:border-lime-500 mb-2 mt-2" name="Aircraft">
+							class="px-10 w-80 py-2 rounded-md outline-none border-2 focus:border-indigo-600 mb-2 mt-2" name="Aircraft">
 							<input type="text" placeholder="Airline" 
-							class="px-10 w-80 py-2 rounded-md outline-none border-2 focus:border-lime-500 mb-2 mt-2" name="Airline">
+							class="px-10 w-80 py-2 rounded-md outline-none border-2 focus:border-indigo-600 mb-2 mt-2" name="Airline">
 							<input type="text" placeholder="Status" 
-							class="px-10 w-5/6 py-2 rounded-md outline-none border-2 focus:border-lime-500 mb-2 mt-2" name="Status">
+							class="px-10 w-80 py-2 rounded-md outline-none border-2 focus:border-indigo-600 mb-2 mt-2" name="Status">
+							<input type="text" placeholder="price" 
+							class="px-10 w-80 py-2 rounded-md outline-none border-2 focus:border-indigo-600 mb-2 mt-2" name="price">
 							<div class="flex space-x-3">
 								<button class="bg-green-300 px-20  py-2 text-green-800 font-semibold tracking-wide cursor-pointer rounded mt-4" id="addFlight">Add</button>
 								<button class="bg-orange-200 px-20  py-2 text-orange-900 font-semibold tracking-wide cursor-pointer rounded mt-4" id="UpdateFlights">Update</button>
@@ -88,7 +88,7 @@
 								</th>
 								<th
 									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-									Depart Gate
+									Depart
 								</th>
 								<th
 									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
@@ -109,6 +109,10 @@
 								<th
 									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
 									Status
+								</th>
+								<th
+									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+									Price
 								</th>
 								<th
 									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
@@ -156,6 +160,11 @@
 								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
 									<p class="text-gray-900 whitespace-no-wrap">
 										<?php echo $rows['status']?>
+									</p>
+								</td>
+								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+									<p class="text-gray-900 whitespace-no-wrap">
+										<?php echo $rows['price']?>
 									</p>
 								</td>
 								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm ">

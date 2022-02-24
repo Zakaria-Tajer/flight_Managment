@@ -60,10 +60,11 @@ class flightController {
         $Newairline = $_POST['Airline'];
         $Newstatus = $_POST['Status'];
         $flight_id = $_COOKIE['Flight_id'];
+        $price = $_POST['price'];
 
-        if(!empty($NewFnumber) && !empty($NewDepartGate) && !empty($NewArrivalAirport) && !empty($Newseats) && !empty($Newaircraft) && !empty($Newairline) && !empty($Newstatus)){
+        if(!empty($NewFnumber) && !empty($NewDepartGate) && !empty($NewArrivalAirport) && !empty($Newseats) && !empty($Newaircraft) && !empty($Newairline) && !empty($Newstatus)&& !empty($price)){
             
-            $getF = $flight->updateFlights($NewFnumber,$NewDepartGate,$NewArrivalAirport,$Newseats,$Newaircraft,$Newairline,$Newstatus,$flight_id);
+            $getF = $flight->updateFlights($NewFnumber,$NewDepartGate,$NewArrivalAirport,$Newseats,$Newaircraft,$Newairline,$Newstatus,$flight_id,$price);
 
             return $getF;
         }else {

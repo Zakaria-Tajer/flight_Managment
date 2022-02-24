@@ -34,9 +34,9 @@ class flight extends Db{
     
     }
 
-    public function updateFlights($NewFnumber,$NewDepartGate,$NewArrivalAirport,$Newseats,$Newaircraft,$Newairline,$Newstatus,$flight_id){
+    public function updateFlights($NewFnumber,$NewDepartGate,$NewArrivalAirport,$Newseats,$Newaircraft,$Newairline,$Newstatus,$flight_id,$price){
         $sql = "UPDATE `flights` SET FlighNumber = '{$NewFnumber}', Depart = '{$NewDepartGate}', ArrivalAirport = '{$NewArrivalAirport}', Seats = '{$Newseats}',
-         aircraft = '{$Newaircraft}', airline = '{$Newairline}', status = '{$Newstatus}' WHERE id = '$flight_id'";
+         aircraft = '{$Newaircraft}', airline = '{$Newairline}', status = '{$Newstatus}', price = '{$price}' WHERE id = '$flight_id'";
 
         $query = $this->connect()->query($sql);
 

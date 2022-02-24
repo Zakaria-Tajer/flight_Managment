@@ -15,7 +15,7 @@
 // }).then(items => {
     
 //     console.log(items);
-//     console.log(items.arrivals[2]);
+//     // console.log(items.arrivals[2]);
 
     
 //     for (let i = 0; i < Math.floor(Math.random()*200); i++) {
@@ -44,9 +44,8 @@
 //             }
 //         }
 //         req.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
-//         req.send(`Fnumber=${Fnumber}&DepartGate= ${DepartGate}&arrival= ${arrival}
-//                 &aircraft= ${aircraft}&airline= ${airline}&status= ${status}`)
-//     // }
+//         req.send(`Fnumber=${Fnumber}&DepartGate= ${DepartGate}&arrival= ${arrival} &aircraft= ${aircraft}&airline= ${airline}&status= ${status}`)
+//     // // }
         
         
         

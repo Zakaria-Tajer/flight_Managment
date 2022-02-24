@@ -22,7 +22,7 @@ login.onclick = ()=> {
             console.log(data)
             
             if(data == 'success'){
-                location.assign('/UserHomePage')
+                location.assign('/')
             }else if(data == 'admin') {
                 location.assign('/flighList')
             }else {

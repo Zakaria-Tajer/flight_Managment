@@ -95,23 +95,16 @@ class user extends Db{
     }
 
 
-    // public function getadmin($email,$password){
-    //     if(!empty($email) && !empty($password)){
-    //         $sql2 = "SELECT * FROM `admin` WHERE email = '{$email}'";
-    //         $query1 = $this->connect()->query($sql2);
-    //         $rows = $query1->fetch_assoc();
-    
-    //             if(password_verify($password, $rows['password'])){
-    //                 echo 'admin';
-    //             }else {
-    //                 echo 'Password Incorrect';
-    //             }
-    //     }else {
-    //         echo 'All Fields are required';
-    //     }
-    // }
-    
+    public function getUserPayment($ssession){
+        $sql5 = "SELECT * FROM `userreservation` WHERE unique_id = '{$ssession}'";
+        $query5 = $this->connect()->query($sql5);
 
+        // $numRow = $query5->num_rows;
+
+
+        return $query5;
+    }
+  
 
 
 

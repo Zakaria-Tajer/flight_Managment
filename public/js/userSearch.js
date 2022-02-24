@@ -17,6 +17,7 @@ for (let i = 0; i < searchFlight.length; i++) {
                    flightContainer.innerHTML = data
                    console.log(data)
                }
+               
            }
        }
        req.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
@@ -25,7 +26,3 @@ for (let i = 0; i < searchFlight.length; i++) {
 
 }
 
-
-function bookingId(e){
-    console.log(e)
-}

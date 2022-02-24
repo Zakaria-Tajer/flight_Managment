@@ -7,12 +7,12 @@
     $router = new AltoRouter();
 
 
-    $router->map('GET', '/', 'home', 'home');
+    // $router->map('GET', '/', 'home', 'home');
+    $router->map('GET', '/', 'landingPage','landingPage');
     $router->map('GET', '/login', 'login','login');
     $router->map('GET', '/register', 'register','register');
     $router->map('GET', '/flighList', 'flighList','flighList');
-    $router->map('GET', '/UserHomePage', 'UserHomePage','UserHomePage');
-    $router->map('GET', '/landingPage', 'landingPage','landingPage');
+    $router->map('GET', '/payment', 'payment','payment');
     
     $router->map('POST', '/flightsInsert', 'requests/flightsInsert');
     $router->map('POST', '/insert', 'requests/insert');
@@ -24,11 +24,13 @@
     $router->map('POST', '/search', 'requests/search');
     $router->map('POST', '/userSearch', 'requests/userSearch');
     $router->map('POST', '/logout', 'requests/logout');
+    $router->map('POST', '/reservationHomePage', 'requests/reservationHomePage');
+    $router->map('POST', '/checkIflogged', 'requests/checkIflogged');
+    $router->map('POST', '/userPayment', 'requests/userPayment');
     
 
 
     $match = $router->match();
-    // var_dump($match);
 
     if($match !== null){
         if(is_callable($match['target'])){

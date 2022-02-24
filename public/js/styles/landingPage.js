@@ -7,6 +7,10 @@ const showMenus = document.getElementById('showMenus')
 const plus = document.querySelectorAll('#plus')
 const minus = document.querySelectorAll('#minus')
 const Chevronup = document.getElementById('Chevronup')
+// // const searchFlightDate = document.getElementById('searchFlightDate')
+// const searchFlightD = document.getElementById('searchFlight')
+const oneW = document.getElementById('oneW')
+
 
 btn.onclick = ()=> {
     show_nav.classList.toggle('active')
@@ -16,8 +20,7 @@ btn.onclick = ()=> {
     }else if(show_nav.style.display = 'block'){
         show_nav.style.display = 'none'
 
-    }
-    
+    } 
 }
 
 down.onclick = ()=> {
@@ -46,6 +49,7 @@ for (let i = 0; i < plus.length; i++) {
         document.getElementById('adults').innerHTML = countMENu
         document.getElementById('Mainadults').innerHTML = countMENu + countMENuChild
         console.log(countMENu)
+        localStorage.setItem('adult', countMENu)
     }
     
     minus[0].onclick = ()=> {
@@ -55,6 +59,8 @@ for (let i = 0; i < plus.length; i++) {
             }else {
                 document.getElementById('adults').innerHTML = countMENu
                 document.getElementById('Mainadults').innerHTML = countMENu
+                localStorage.setItem('adult', countMENu)
+
             }
         // console.log(countMENu)
     }
@@ -63,6 +69,7 @@ for (let i = 0; i < plus.length; i++) {
         document.getElementById('Children').innerHTML = countMENuChild
         document.getElementById('Mainadults').innerHTML = countMENuChild + countMENu
         console.log(countMENuChild)
+        localStorage.setItem('child', countMENuChild)
     }
     
     minus[1].onclick = ()=> {
@@ -72,9 +79,21 @@ for (let i = 0; i < plus.length; i++) {
         }else {
             document.getElementById('Children').innerHTML = countMENuChild
             document.getElementById('Mainadults').innerHTML = countMENuChild
-            // console.log(countMENu)
+            localStorage.setItem('child', countMENuChild)
         }
     }
     
     
 }
+
+
+// function send(){
+//     if(searchFlightD.value == '' ||  searchFlightDate.value == ''){
+//         console.log(1)
+//     }else if(searchFlightD.value == '' && oneW.value == '1'){
+//         console.log(10);
+//     }else {
+//         console.log('me');
+//     }
+
+// }

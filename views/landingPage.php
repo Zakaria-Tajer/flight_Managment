@@ -112,7 +112,7 @@
                                         <i class="fa-solid fa-plus text-sm pointer-events-auto" id="plus"></i>
                                     </div>
                                     <div class="mx-auto ">
-                                        <h2 class="text-sm font-mono" id="Children">1</h2>
+                                        <h2 class="text-sm font-mono" id="Children">0</h2>
                                     </div>
                                     <div class="h-full flex items-center absolute right-2">
                                         <i class="fa-solid fa-minus text-sm pointer-events-auto" id="minus"></i>

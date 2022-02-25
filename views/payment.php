@@ -7,7 +7,12 @@
 
   $data = $user->getSession();
   
+  // print_r($data);
   $numRow = $data->num_rows;
+
+  // if($numRow > 0)
+  $ticketNumber = $_POST['travelTicketCount'];
+    
 
 ?>
 
@@ -30,10 +35,48 @@
     <div class="flex flex-col justify-start items-start w-full space-y-4 md:space-y-6 xl:space-y-8" id="container">
       
       <div class="flex justify-center flex-col md:flex-row flex-col items-stretch w-full space-y-4 md:space-y-0 md:space-x-6 xl:space-x-8">
-        
+        <div class="flex flex-col px-4 py-6 md:p-6 xl:p-8 w-full bg-gray-50 dark:bg-gray-800 space-y-6">
+          <h3 class="text-xl dark:text-white font-semibold leading-5 text-gray-800">Summary</h3>
+          <div class="flex justify-center items-center w-full space-y-4 flex-col border-gray-200 border-b pb-4">
+            <div class="flex justify-between w-full">
+              <p class="text-base dark:text-white leading-4 text-gray-800">Subtotal</p>
+              <p class="text-base dark:text-gray-300 leading-4 text-gray-600">$56.00</p>
+            </div>
+            <div class="flex justify-between items-center w-full">
+              <p class="text-base dark:text-white leading-4 text-gray-800">Discount <span class="bg-gray-200 p-1 text-xs font-medium dark:bg-white dark:text-gray-800 leading-3 text-gray-800">STUDENT</span></p>
+              <p class="text-base dark:text-gray-300 leading-4 text-gray-600">-$28.00 (50%)</p>
+            </div>
+            <div class="flex justify-between items-center w-full">
+              <p class="text-base dark:text-white leading-4 text-gray-800">Shipping</p>
+              <p class="text-base dark:text-gray-300 leading-4 text-gray-600">$8.00</p>
+            </div>
+          </div>
+          <div class="flex justify-between items-center w-full">
+            <p class="text-base dark:text-white font-semibold leading-4 text-gray-800">Total</p>
+            <p class="text-base dark:text-gray-300 font-semibold leading-4 text-gray-600">$36.00</p>
+          </div>
+        </div>
+        <div class="flex flex-col justify-center px-4 py-6 md:p-6 xl:p-8 w-full bg-gray-50 dark:bg-gray-800 space-y-6" id="shipping">
+        <h3 class="text-xl dark:text-white font-semibold leading-5 text-gray-800">Shipping</h3>
+<div class="flex justify-between items-start w-full">
+  <div class="flex justify-center items-center space-x-4">
+    <div class="w-8 h-8">
+      <img class="w-full h-full" alt="logo" src="https://i.ibb.co/L8KSdNQ/image-3.png" />
+    </div>
+    <div class="flex flex-col justify-start items-center">
+      <p class="text-lg leading-6 dark:text-white font-semibold text-gray-800">DPD Delivery<br /><span class="font-normal">Delivery with 24 Hours</span></p>
+    </div>
+  </div>
+  <p class="text-lg font-semibold leading-6 dark:text-white text-gray-800">$8.00</p>
+</div>
+<div class="w-full flex justify-center items-center">
+  <button class="hover:bg-black dark:bg-white dark:text-gray-800 dark:hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 py-5 w-96 md:w-full bg-gray-800 text-base font-medium leading-4 text-white">View Carrier Details</button>
+
+          </div>
+        </div>
       </div>
     </div>
-    <div class="w-full mx-auto rounded-lg bg-white shadow-lg p-5 text-gray-700" style="max-width: 600px">
+    <div class="w-full mx-auto rounded-lg bg-white shadow-lg p-5 h-1/2 text-gray-700" style="max-width: 600px">
         <div class="w-full pt-1 pb-5">
             <div class="bg-indigo-500 text-white overflow-hidden rounded-full w-20 h-20 -mt-16 mx-auto shadow-lg flex justify-center items-center">
               <i class="fa-solid fa-credit-card text-2xl"></i>
@@ -113,9 +156,57 @@
             <button class="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold"><i class="mdi mdi-lock-outline mr-1"></i> PAY NOW</button>
         </div>
     </div>
+    
   </div>
 </div>
-    <!-- </div> -->
+  <?php 
+    $rows = $data->fetch_assoc();
+  ?>
+    <div class="bg-blue-600 sm:flex sm:flex-col md:flex-row" id="summary">
+      <div class="flex flex-col px-4 py-6 md:p-6 xl:p-8 md:w-1/2 bg-gray-50 dark:bg-gray-800 space-y-6 sm:w-full xl:w-2/4">
+          <h3 class="text-xl dark:text-white font-semibold leading-5 text-gray-800">Summary</h3>
+          <div class="flex justify-center items-center w-full space-y-4 flex-col border-gray-200 border-b pb-4">
+            <div class="flex justify-between w-full">
+              <p class="text-base dark:text-white leading-4 text-gray-800">Subtotal</p>
+              <p class="text-base dark:text-gray-300 leading-4 text-gray-600" id="total">
+                
+                <input type="hidden" value="<?php echo $_SESSION['price']?>" id="priceTotal">
+              </p>
+            </div>
+            <div class="flex justify-between items-center w-full">
+              <p class="text-base dark:text-white leading-4 text-gray-800">Discount <span class="bg-gray-200 p-1 text-xs font-medium dark:bg-white dark:text-gray-800 leading-3 text-gray-800">CHILDREN</span></p>
+              <p class="text-base dark:text-gray-300 leading-4 text-gray-600" id="Discount"></p>
+            </div>
+            <div class="flex justify-between items-center w-full">
+              <p class="text-base dark:text-white leading-4 text-gray-800">Shipping</p>
+              <p class="text-base dark:text-gray-300 leading-4 text-gray-600">$8.00</p>
+            </div>
+          </div>
+          <div class="flex justify-between items-center w-full ">
+            <p class="text-base dark:text-white font-semibold leading-4 text-gray-800">Total</p>
+            <p class="text-base dark:text-gray-300 font-semibold leading-4 text-gray-600">$36.00</p>
+          </div>
+      </div>
+      <div class="flex flex-col justify-center px-4 py-6 md:p-6 xl:p-8 md:w-1/2 bg-gray-50 dark:bg-gray-800 space-y-6 sm:w-full xl:w-2/4" id="shipping">
+        <h3 class="text-xl dark:text-white font-semibold leading-5 text-gray-800">Shipping</h3>
+      
+          <div class="flex justify-between items-start w-full">
+            <div class="flex justify-center items-center space-x-4">
+              <div class="w-8 h-8">
+                <img class="w-full h-full" alt="logo" src="https://i.ibb.co/L8KSdNQ/image-3.png" />
+              </div>
+              <div class="flex flex-col justify-start items-center">
+                <p class="text-lg leading-6 dark:text-white font-semibold text-gray-800">DPD Delivery<br /><span class="font-normal">Delivery with 24 Hours</span></p>
+              </div>
+            </div>
+            <p class="text-lg font-semibold leading-6 dark:text-white text-gray-800">$8.00</p>
+          </div>
+          <div class="flex justify-start md:justify-center items-center">
+            <button class="hover:bg-black w-60 dark:bg-white dark:text-gray-800 dark:hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 py-5  bg-gray-800 text-base font-medium leading-4 text-white">View Carrier Details</button>
+          </div>
+      </div>
+    </div>
+      
     <script src="../public/js/styles/payment.js"></script>
     <script src="../public/js/UserPayement.js"></script>
     <script src="https://kit.fontawesome.com/f821dddf9d.js" crossorigin="anonymous"></script>

@@ -56,7 +56,6 @@ function bookingId(e){
         localStorage.setItem('flightArrival',flightArrival)
     }
     console.log(e)
-    // const arr = []
     const req = new XMLHttpRequest();
     req.open("POST", "http://localhost:8000/reservationHomePage", true);
     req.onload = () =>{
@@ -69,11 +68,12 @@ function bookingId(e){
                 if(data == 'Session Not Set'){
                     console.log(1234);
                     location.assign('/login')
-
                 }else if(searchFlightDepart.value == '', searchFlightArrival.value == ''){
                     alertdiv.classList.add('displayAlert')
                 }else if(alertdiv.classList.contains('displayAlert')){
                     alertdiv.classList.remove('displayAlert')
+                }else if(data == 'setted'){
+                    location.assign('/payment')
                 }
 
                 

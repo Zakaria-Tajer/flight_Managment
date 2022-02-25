@@ -86,9 +86,6 @@ class user extends Db{
                 
             }
 
-
-
-
         }else {
             echo 'All Fields are required';
         }

@@ -16,7 +16,7 @@ console.log()
 // let travlPLan = localStorage.getItem('travlPLan')
 // let adult = localStorage.getItem('adult')
 // let child = localStorage.getItem('child')
-console.log(flightArrival,flightDepart,travlPLan,adult,child)
+// console.log(flightArrival,flightDepart,travlPLan,adult,child)
 
 // DepartDate.textContent = flightDepart
 // ArrDate.textContent = flightArrival

@@ -42,7 +42,7 @@ Chevronup.onclick = ()=> {
 
 
 countMENu = 1
-countMENuChild = 1
+countMENuChild = 0
 for (let i = 0; i < plus.length; i++) {
     plus[0].onclick = ()=> {
         countMENu+=1

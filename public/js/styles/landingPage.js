@@ -43,6 +43,9 @@ Chevronup.onclick = ()=> {
 
 countMENu = 1
 countMENuChild = 0
+localStorage.setItem('adult', countMENu)
+localStorage.setItem('child', countMENuChild)
+
 for (let i = 0; i < plus.length; i++) {
     plus[0].onclick = ()=> {
         countMENu+=1
@@ -50,6 +53,7 @@ for (let i = 0; i < plus.length; i++) {
         document.getElementById('Mainadults').innerHTML = countMENu + countMENuChild
         console.log(countMENu)
         localStorage.setItem('adult', countMENu)
+
     }
     
     minus[0].onclick = ()=> {

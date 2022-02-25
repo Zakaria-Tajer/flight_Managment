@@ -9,20 +9,6 @@ let current = new Date();
 
 getDate.textContent = current.toLocaleDateString()
 Time.textContent = current.toLocaleTimeString()
-console.log()
-
-// let flightArrival = localStorage.getItem('flightArrival')
-// let flightDepart = localStorage.getItem('flightDepart')
-// let travlPLan = localStorage.getItem('travlPLan')
-// let adult = localStorage.getItem('adult')
-// let child = localStorage.getItem('child')
-// console.log(flightArrival,flightDepart,travlPLan,adult,child)
-
-// DepartDate.textContent = flightDepart
-// ArrDate.textContent = flightArrival
-// TravelPlan.textContent = travlPLan
-// Adults.textContent = adult
-// Children.textContent = child
 
 
 

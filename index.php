@@ -13,6 +13,7 @@
     $router->map('GET', '/register', 'register','register');
     $router->map('GET', '/flighList', 'flighList','flighList');
     $router->map('GET', '/payment', 'payment','payment');
+    $router->map('GET', '/test', 'test','test');
     
     $router->map('POST', '/flightsInsert', 'requests/flightsInsert');
     $router->map('POST', '/insert', 'requests/insert');

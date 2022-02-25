@@ -44,6 +44,11 @@
                         </p>
                     </td>
                     <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                        <p class="text-gray-900 whitespace-no-wrap">
+                            '.$rows['price'].'
+                        </p>
+                    </td>
+                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                     <button id="book_flight" onclick="bookingId('.$rows['id'].') " 
                         class="py-3 px-6 bg-indigo-600 hover:bg-indigo-900 text-white duration-700 rounded-lg "
                     >Book Now</button>

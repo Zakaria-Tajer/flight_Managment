@@ -17,6 +17,7 @@ let travelTicketCount = JSON.parse(adult) + JSON.parse(child)
 let tick = localStorage.setItem('travelTicketCount',travelTicketCount)
 
 window.onload = ()=> {
+
     let ticketCount = localStorage.getItem('travelTicketCount')
     const req = new XMLHttpRequest();
     req.open("POST", "http://localhost:8000/userPayment", true);

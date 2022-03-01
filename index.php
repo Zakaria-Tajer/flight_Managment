@@ -8,7 +8,7 @@
 
 
     // $router->map('GET', '/', 'home', 'home');
-    $router->map('GET', '/', 'landingPage','landingPage');
+    $router->map('GET', '/', 'index','index');
     $router->map('GET', '/login', 'login','login');
     $router->map('GET', '/register', 'register','register');
     $router->map('GET', '/flighList', 'flighList','flighList');

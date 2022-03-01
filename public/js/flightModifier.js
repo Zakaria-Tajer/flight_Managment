@@ -5,6 +5,7 @@ const containerModifierForm = document.getElementById('containerModifierForm')
 const redirectPage = document.getElementById('redirectPage')
 const DepartSearchModifier = document.getElementById('DepartSearchModifier')
 const departList = document.querySelector('#departList')
+const containers = document.getElementById('container')
 
 const ArrivalList = document.getElementById('ArrivalList')
 const arrivalAirportSearch = document.getElementById('arrivalAirportSearch')
@@ -15,10 +16,7 @@ const ModBtn = document.getElementById('ModBtn')
 const flightModifierForm = document.getElementById('flightModifierForm')
 const AdultsNumbers = document.getElementById('Adults')
 const ChildrenNumbers = document.getElementById('Children')
-const Customers = document.getElementById('Customers')
 
-
-console.log(Customers);
 
 flightModifierForm.onclick = (e) => {
     e.preventDefault()

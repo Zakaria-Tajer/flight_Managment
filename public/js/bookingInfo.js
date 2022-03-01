@@ -10,7 +10,10 @@ const alertLogin = document.getElementById('alertLogin')
 const round = document.getElementById('round')
 const one = document.getElementById('one')
 const selectMenu = document.getElementById('selectMenu')
+
 // document.getElementById('alertLogin').style.display = 'none'
+
+
 
 window.onload =  ()=> {
     const req = new XMLHttpRequest();
@@ -39,11 +42,13 @@ localStorage.setItem('travlPLan','Round Trip')
 function showDiv(divId, element){
     if(element.value == 1){
         localStorage.setItem('travlPLan','one Way')
+        localStorage.setItem('flightArrival', 'No Flight Arrival Date(One Way)')
         document.getElementById(divId).style.display = 'none'
     }else if(element.value == 0){
         localStorage.setItem('travlPLan','Round Trip')
         document.getElementById(divId).style.display = ''
     }
+
     // console.log(one.value,round.value)
     // document.getElementById(divId).style.display = element.value == 1 ? 'block' : 'none'
 }
@@ -63,13 +68,18 @@ function bookingId(e){
             if(req.status === 200){
                 let data = req.response
                 console.log(data)
-                // arr.push(data)
-                // localStorage.setItem('flights',arr)
+
                 if(data == 'Session Not Set'){
                     console.log(1234);
                     location.assign('/login')
-                }else if(searchFlightDepart.value == '', searchFlightArrival.value == ''){
+                }else if(selectMenu.value == 0 && searchFlightDepart.value == '' && searchFlightArrival.value == ''){
                     alertdiv.classList.add('displayAlert')
+                }else if(selectMenu.value == 1 && searchFlightArrival.value !== ''){
+                    localStorage.setItem('flightArrival','No Arrival Date')
+                    // alertdiv.classList.add('displayAlert')
+                }else if(selectMenu.value == 1 && searchFlightDepart.value == ''){
+                    alertdiv.classList.add('displayAlert')
+                              
                 }else if(alertdiv.classList.contains('displayAlert')){
                     alertdiv.classList.remove('displayAlert')
                 }else if(data == 'setted'){
@@ -82,6 +92,8 @@ function bookingId(e){
     }
     req.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
     req.send("rowBooked=" + bookingRowId)
+
+    searchFlightArrival.value ==  ''
  }
 
 

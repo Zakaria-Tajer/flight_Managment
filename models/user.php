@@ -96,9 +96,6 @@ class user extends Db{
         $sql5 = "SELECT * FROM `userreservation` WHERE unique_id = '{$ssession}'";
         $query5 = $this->connect()->query($sql5);
 
-        // $numRow = $query5->num_rows;
-
-
         return $query5;
     }
   

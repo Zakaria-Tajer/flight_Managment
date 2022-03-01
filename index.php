@@ -28,6 +28,9 @@
     $router->map('POST', '/reservationHomePage', 'requests/reservationHomePage');
     $router->map('POST', '/checkIflogged', 'requests/checkIflogged');
     $router->map('POST', '/userPayment', 'requests/userPayment');
+    $router->map('POST', '/modifierFlightUser', 'requests/modifierFlightUser');
+    $router->map('POST', '/arrivalUserModifier', 'requests/arrivalUserModifier');
+    $router->map('POST', '/Seats', 'requests/Seats');
     
 
 

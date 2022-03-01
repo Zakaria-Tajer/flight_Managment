@@ -62,6 +62,21 @@ class flight extends Db{
         return $query;
     }
 
+    public function getDepartAirport($searchDepart){
+        $sql = "SELECT * FROM `flights` WHERE Depart LIKE '%{$searchDepart}%'";
+        $query = $this->connect()->query($sql);
+
+        return $query;
+
+    }
+    
+    public function getArrivalAirport($arrivalAirport){
+        $sql = "SELECT * FROM `flights` WHERE Depart LIKE '%{$arrivalAirport}%'";
+        $query = $this->connect()->query($sql);
+
+        return $query;
+
+    }
     
 
     

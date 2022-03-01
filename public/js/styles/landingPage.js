@@ -86,18 +86,6 @@ for (let i = 0; i < plus.length; i++) {
             localStorage.setItem('child', countMENuChild)
         }
     }
-    
-    
+
 }
 
-
-// function send(){
-//     if(searchFlightD.value == '' ||  searchFlightDate.value == ''){
-//         console.log(1)
-//     }else if(searchFlightD.value == '' && oneW.value == '1'){
-//         console.log(10);
-//     }else {
-//         console.log('me');
-//     }
-
-// }

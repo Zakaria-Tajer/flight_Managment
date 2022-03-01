@@ -17,6 +17,12 @@
 .displayAlert {
     display: flex;
 }
-/* .hide {
-    visibility: hidden;
+#departList.active {
+    display: block;
+}
+#ArrivalList.active {
+    display: block;
+}
+/* #departList.active {
+    display: block;
 } */

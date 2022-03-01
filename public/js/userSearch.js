@@ -16,6 +16,7 @@ for (let i = 0; i < searchFlight.length; i++) {
                    let data = req.response
                    flightContainer.innerHTML = data
                    console.log(data)
+                   console.clear()
                }
                
            }

@@ -13,35 +13,32 @@ let travlPLan = localStorage.getItem('travlPLan')
 let adult = localStorage.getItem('adult')
 let child = localStorage.getItem('child')
 
-var travelTicketCount = childs + adults
-localStorage.setItem('travelTicketCount',travelTicketCount)
+let travelTicketCount = JSON.parse(adult) + JSON.parse(child)
+let tick = localStorage.setItem('travelTicketCount',travelTicketCount)
 
 window.onload = ()=> {
+    let ticketCount = localStorage.getItem('travelTicketCount')
     const req = new XMLHttpRequest();
     req.open("POST", "http://localhost:8000/userPayment", true);
     req.onload = () =>{
         if(req.readyState === XMLHttpRequest.DONE){
             if(req.status === 200){
                 let data = req.response
-                console.log(data)
-                console.clear()
-                let dis = (priceTotal.value * child) * 0.2
-                let sum
+                // console.log(data)
+                // console.clear()
+                let dis = (priceTotal.value * JSON.parse(child)) * 0.2
+                let sum = priceTotal.value
+                
                 container.innerHTML = data
-
-                if(adult == 1 && child == 0 && travelTicketCount == 1){
-                    sum = priceTotal.value
-                    total.innerHTML = sum
+                
+                if(adult == 1 && child == 0 && ticketCount == 1){
+                    total.textContent = sum
                     ticketFLightPriceTotal.innerHTML = sum
-
-                }else if(adult > 1){
-                    sum = priceTotal.value * adult
-                    total.innerHTML = sum
-                    ticketFLightPriceTotal.innerHTML = sum
-
-                }else if(child >= 1){
-                    Discount.innerHTML = `${dis} (-20%)`
-                    ticketFLightPriceTotal.innerHTML = sum - dis
+                }else if(adult >= 1 && child >= 1 && ticketCount > 1){
+                    total.innerHTML = priceTotal.value * ticketCount
+                    Discount.innerHTML = `${dis}-(20%)`
+                    let prices = (priceTotal.value * ticketCount) - dis
+                    ticketFLightPriceTotal.innerHTML = prices
                 }
                 if(child == 0){
                     Discount.innerHTML = 'No Discounts'
@@ -50,8 +47,9 @@ window.onload = ()=> {
         }
     }
     req.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+
     req.send(`travelTicketCount=${travelTicketCount}&flightArrival=${flightArrival}
-    &flightDepart=${flightDepart}&travlPLan=${travlPLan}&adults=${adult}&childs=${child}`)
+            &flightDepart=${flightDepart}&travlPLan=${travlPLan}&adults=${adult}&childs=${child}`)
 
 
 }

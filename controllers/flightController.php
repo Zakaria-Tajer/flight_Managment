@@ -102,6 +102,25 @@ class flightController {
         
         return $getF;
     }
+    public function DepartAirport(){
+        $flight  = new flight();
+        
+        $searchDepart = $_POST['searchedCountry'];
+
+        $getF = $flight->getDepartAirport($searchDepart);
+
+        return $getF;
+    }
+    public function ArrivalAirport(){
+        $flight  = new flight();
+
+        $arrivalAirport = $_POST['arrivalAirport'];
+
+        $getF = $flight->getArrivalAirport($arrivalAirport);
+
+        return $getF;
+    }
+
 
 
 

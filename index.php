@@ -6,14 +6,13 @@
 
     $router = new AltoRouter();
 
-
-    // $router->map('GET', '/', 'home', 'home');
     $router->map('GET', '/', 'index','index');
     $router->map('GET', '/login', 'login','login');
     $router->map('GET', '/register', 'register','register');
     $router->map('GET', '/flighList', 'flighList','flighList');
     $router->map('GET', '/payment', 'payment','payment');
     $router->map('GET', '/test', 'test','test');
+    $router->map('GET', '/multipulePassengers', 'multipulePassengers','multipulePassengers');
     
     $router->map('POST', '/flightsInsert', 'requests/flightsInsert');
     $router->map('POST', '/insert', 'requests/insert');
@@ -30,7 +29,9 @@
     $router->map('POST', '/userPayment', 'requests/userPayment');
     $router->map('POST', '/modifierFlightUser', 'requests/modifierFlightUser');
     $router->map('POST', '/arrivalUserModifier', 'requests/arrivalUserModifier');
-    $router->map('POST', '/Seats', 'requests/Seats');
+    $router->map('POST', '/passenger', 'requests/passenger');
+    $router->map('POST', '/multiPassengers', 'requests/multiPassengers');
+    $router->map('POST', '/unique_id', 'requests/unique_id');
     
 
 
@@ -39,7 +40,6 @@
     if($match !== null){
         if(is_callable($match['target'])){
             call_user_func_array($match['target'], $match['params']);
-            // var_dump(call_user_func_array($match['target'], $match['params']));
         }else {
             $prams = $match['params'];
             include "views/{$match['target']}.php";

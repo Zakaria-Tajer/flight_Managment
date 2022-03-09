@@ -78,8 +78,8 @@ for (let i = 0; i < plus.length; i++) {
     
     minus[1].onclick = ()=> {
         countMENuChild-=1
-        if(countMENuChild < 1){
-            countMENuChild=1
+        if(countMENuChild < 0){
+            countMENuChild=0
         }else {
             document.getElementById('Children').innerHTML = countMENuChild
             document.getElementById('Mainadults').innerHTML = countMENuChild

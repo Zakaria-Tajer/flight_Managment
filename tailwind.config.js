@@ -1,4 +1,5 @@
 module.exports = {
+  mode: 'jit',
   content: ["./views/**/*.{html,js,php}",
             "./public/**/*.js"],
   theme: {

@@ -1,7 +1,7 @@
 <?php
 
     session_start();
-    
+    var_dump($_SESSION['unique_Passenger_id']);
     include 'autoload.php';
 
     $user = new userController();
@@ -12,7 +12,7 @@
 
     $output = '';
     $summary = '';
-    $ticketNumber = $_POST['travelTicketCount'];
+    // $ticketNumber = $_POST['travelTicketCount'];
     $flightDepart = $_POST['flightDepart'];
     $flightArrival = $_POST['flightArrival'];
     $travlPLan = $_POST['travlPLan'];
@@ -21,9 +21,9 @@
 
     if($rows > 0){
         $res = $data->fetch_assoc();
-        for ($i=0; $i < $ticketNumber; $i++) { 
+        for ($i=0; $i < 1; $i++) { 
             $output .= '
-            <div class="flex flex-col justify-start items-start dark:bg-gray-800 bg-gray-50 px-4 py-4 md:py-6 md:p-6 xl:p-8 w-full  sm:justify-center rounded-xl" id="tickets">
+        <div class="flex flex-col justify-start items-start dark:bg-gray-800 bg-gray-50 px-4 py-4 md:py-6 md:p-6 xl:p-8 w-full  sm:justify-center rounded-xl" id="tickets">
             <p class="text-lg md:text-xl dark:text-white font-semibold leading-6 xl:leading-5 text-gray-800" id="Customers">Customer’s Ticket</p>
         <div class="mt-4 md:mt-6 flex flex-col md:flex-row justify-start items-start md:items-center md:space-x-6 xl:space-x-8 w-full">
           <div class="w-40 xl:w-40 md:w-24 h-full flex flex-col items-center relative sm:mx-auto sm:mb-5">

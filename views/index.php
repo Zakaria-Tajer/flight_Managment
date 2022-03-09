@@ -17,7 +17,7 @@
     <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800">
         <div class="container flex flex-wrap justify-between items-center mx-auto" >
             <a href="#" class="flex">
-                Logo Here
+                <img src="../public/img/22434239.png" class="w-40 h-40">
             </a>
             <div class="flex md:order-2 items-center">
 				<div class="flex items-center space-x-2 " id="info">

@@ -15,8 +15,8 @@ for (let i = 0; i < searchFlight.length; i++) {
                if(req.status === 200){
                    let data = req.response
                    flightContainer.innerHTML = data
-                   console.log(data)
-                   console.clear()
+                //    console.log(data)
+                //    console.clear()
                }
                
            }

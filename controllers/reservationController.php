@@ -9,8 +9,6 @@ class reservationController {
 
         $bookingRowId = $_POST['rowBooked'];
 
-        
-
         $flightReserved = $reserve->getCorrespandFlight($bookingRowId);
          
         return $flightReserved;

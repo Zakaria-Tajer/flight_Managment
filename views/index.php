@@ -24,6 +24,8 @@
 					
 				</div>
                 <a id="buttonLo" type="button" class="py-3 px-10 bg-indigo-600 hover:bg-indigo-800 duration-700 rounded-lg ml-2 text-white sm:mr-2 font-mono" href="<?= $router->generate('login') ?>">login</a>
+                <button class="bg-indigo-600 px-6 py-3 rounded-md text-white font-semibold tracking-wide cursor-pointer hidden" id="logoutBtn">Logout</button>
+
                 <button id="btn" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-4" aria-expanded="false">
                 <span class="sr-only">Open main menu</span>
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
@@ -197,5 +199,6 @@
     <script src="../public/js/styles/landingPage.js"></script>
     <script src="../public/js/userSearch.js"></script>
     <script src="../public/js/bookinginfo.js"></script>
+    <script src="../public/js/logout.js"></script>
 </body>
 </html>

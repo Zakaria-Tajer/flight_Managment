@@ -35,17 +35,6 @@ class passengers extends Db {
        
         $query = $this->connect()->query($sql);
 
-        // $numRows = $query->num_rows;
-
-        // if($numRows > 0){
-        //     while($row = $query->fetch_assoc()){
-        //             if($query){
-        //                 var_dump($row['unique_Passenger_id']);
-        //             }
-
-        //     }
-            
-        // }
 
 
         return $query;

@@ -3,8 +3,6 @@ let passengerFiller = document.getElementById('passengerFiller')
 let errorText = document.getElementById('errorText')
 let eroorContainer = document.getElementById('eroorContainer')
 let FormDoneButton = document.getElementById('FormDone')
-let successAlert = document.getElementById('successAlert')
-
 
 window.onload =()=> {
     // localStorage.removeItem('updated')
@@ -22,6 +20,24 @@ for (let i = 0; i < children; i++) {
 
     dc.innerHTML = `
     <div class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
+    <div class="alert h-14 flex-row items-center bg-green-200 p-5 rounded border-b-2 border-green-300 hidden " id="successAlert">
+			<div class="alert-icon flex items-center bg-green-100 border-2 border-green-500 justify-center h-8 w-8 flex-shrink-0 rounded-full">
+				<span class="text-green-500">
+					<svg fill="currentColor"
+						 viewBox="0 0 20 20"
+						 class="h-6 w-6">
+						<path fill-rule="evenodd"
+							  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+							  clip-rule="evenodd"></path>
+					</svg>
+				</span>
+			</div>
+			<div class="alert-content ml-4">
+				<div class="alert-title font-semibold text-lg text-green-800">
+					Success
+				</div>
+			</div>
+		</div>
         <div class="flex flex-col">
             <label class="leading-loose text-sm">First Name</label>
             <input type="text" class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" id="Fname" name="Fname[]" placeholder="First Name">
@@ -32,7 +48,7 @@ for (let i = 0; i < children; i++) {
         </div>
         <div class="flex items-center space-x-4">
             <div class="flex flex-col">
-            <label class="leading-loose text-sm">Email</label>
+            <label class="leading-loose text-sm">BirthDay</label>
             <div class="relative focus-within:text-gray-600 text-gray-400">
                 <input type="date" class="pr-4 pl-4 w-48 py-2 border focus:ring-gray-500 focus:border-gray-900 sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" name="BirthDay[]" id="BirthDay" placeholder="17/04/2002" >
             </div>
@@ -60,6 +76,8 @@ let Fname = document.querySelectorAll('#Fname')
 let lname = document.querySelectorAll('#lname')
 let BirthDay = document.querySelectorAll('#BirthDay')
 let selectGender = document.querySelectorAll('#selectGender')
+let successAlert = document.querySelectorAll('#successAlert')
+
 // let addPassengersButton = document.querySelectorAll('#addPassengersButton')
 
 let array = []
@@ -97,6 +115,7 @@ for (let i = 0; i < addPassengersButton.length; i++) {
                         localStorage.setItem('updated','updated')
                         localStorage.setItem('status','success')
 
+                        successAlert[i].style.display = 'flex'
                         setTimeout(()=> {
                             // location.assign('/payment')
                         },2000)

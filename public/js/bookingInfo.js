@@ -10,6 +10,7 @@ const alertLogin = document.getElementById('alertLogin')
 const round = document.getElementById('round')
 const one = document.getElementById('one')
 const selectMenu = document.getElementById('selectMenu')
+const logoutBtn = document.getElementById('logoutBtn')
 
 // document.getElementById('alertLogin').style.display = 'none'
 
@@ -30,6 +31,8 @@ window.onload =  ()=> {
                     setTimeout(() => {
                         alertLogin.style.display = 'none'
                     },8000)
+                }else if(data == 'set'){
+                    logoutBtn.style.display = 'block'
                 }
             }
         }

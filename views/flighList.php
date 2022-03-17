@@ -71,7 +71,7 @@
 				<input class="bg-gray-50 outline-none ml-1 block " type="text" name="" id="searchFlightAdmin" placeholder="search...">
           </div>
 				<div class="lg:ml-40 ml-10 space-x-8">
-					<!-- <button class="bg-indigo-600 px-4 py-2 rounded-md text-white font-semibold tracking-wide cursor-pointer">New Report</button> -->
+					<button class="bg-indigo-600 px-4 py-2 rounded-md text-white font-semibold tracking-wide cursor-pointer" id="logoutBtn">Logout</button>
 					<!-- <button class="bg-indigo-600 px-4 py-2 rounded-md text-white font-semibold tracking-wide cursor-pointer">Create</button> -->
 				</div>
 			</div>
@@ -210,6 +210,7 @@
 	<script src="../public/js/FlightAction.js"></script>
 	<script src="../public/js/styles/flightS.js"></script>
 	<script src="../public/js/search.js"></script>
+	<script src="../public/js/logout.js"></script>
 </body>
 </html>
 

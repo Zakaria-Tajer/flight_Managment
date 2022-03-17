@@ -26,10 +26,11 @@
 <body>
     <!-- <div class="min-h-screen bg-gray-400 flex"> -->
     <div class="py-14 px-4 md:px-6 2xl:px-20 2xl:container 2xl:mx-auto">
-  <!--- more free and premium Tailwind CSS components at https://tailwinduikit.com/ --->
 
   <div class="flex justify-start item-start space-y-2 flex-col">
     <h1 class="text-3xl dark:text-white lg:text-4xl font-semibold leading-7 lg:leading-9 text-gray-800 font-mono">Booking Order </h1>
+    <button class="bg-indigo-600 px-6 py-3 rounded-md text-white font-semibold tracking-wide cursor-pointer w-28 absolute right-10 top-8 md:top-8" id="logoutBtn">Logout</button>
+
     <div class="w-full bg-gray-300 h-[3px]"></div>
     <div class="flex space-x-2">
         <p class="text-base dark:text-gray-300 font-medium leading-6 text-gray-600" id="currentDate"></p>
@@ -64,7 +65,6 @@
         <div id="paypal">
             <!-- <button class="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold"   ><i class="mdi mdi-lock-outline mr-1"></i> PAY NOW</button> -->
         </div>
-        <iframe id="my_iframe" style="">d</iframe>
 
     </div>
     
@@ -190,6 +190,7 @@
     <script src="../public/js/UserPayement.js"></script>
     <script src="../public/js/flightModifier.js"></script>
     <script src="../public/js/paypalPayment.js" defer></script>
+    <script src="../public/js/logout.js"></script>
     <script src="https://kit.fontawesome.com/f821dddf9d.js" crossorigin="anonymous"></script>
 
 </body>

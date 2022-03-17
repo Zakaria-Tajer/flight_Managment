@@ -8,28 +8,6 @@
 <body>
 <div class="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
   
-<div class="alert w-60 flex h-14 flex-row items-center bg-green-200 p-5 rounded border-b-2 border-green-300 invisible" id="successAlert">
-			<div class="alert-icon flex items-center bg-green-100 border-2 border-green-500 justify-center h-8 w-8 flex-shrink-0 rounded-full">
-				<span class="text-green-500">
-					<svg fill="currentColor"
-						 viewBox="0 0 20 20"
-						 class="h-6 w-6">
-						<path fill-rule="evenodd"
-							  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-							  clip-rule="evenodd"></path>
-					</svg>
-				</span>
-			</div>
-			<div class="alert-content ml-4">
-				<div class="alert-title font-semibold text-lg text-green-800">
-					Success
-				</div>
-			
-			</div>
-		</div>
-
-
-
   <div class="relative py-3 sm:max-w-xl sm:mx-auto">
     <div class="relative px-4 py-10 bg-white mx-8 md:mx-0 shadow rounded-3xl sm:p-10">
       <div class="max-w-md mx-auto" >
@@ -51,7 +29,9 @@
         </div>
       </div>
     </div>
+    
   </div>
+  
 </div>
 
 <script src="../public/js/passengerInformation.js"></script>

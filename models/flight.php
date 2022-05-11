@@ -78,6 +78,14 @@ class flight extends Db{
 
     }
     
+    public function getFlightReserved($id){
+        $sql = "SELECT * FROM `flights` WHERE id = '{$id}'";
+        $query = $this->connect()->query($sql);
+
+        return $query;
+
+    }
+    
 
     
 

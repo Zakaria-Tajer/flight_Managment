@@ -120,6 +120,15 @@ class flightController {
 
         return $getF;
     }
+    public function getFlightReservedById(){
+        $flight  = new flight();
+
+        $RowBooked = $_POST['RowBooked'];
+
+        $getF = $flight->getArrivalAirport($RowBooked);
+
+        return $getF;
+    }
 
 
 

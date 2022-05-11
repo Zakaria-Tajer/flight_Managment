@@ -7,7 +7,7 @@ const showMenus = document.getElementById('showMenus')
 const plus = document.querySelectorAll('#plus')
 const minus = document.querySelectorAll('#minus')
 const Chevronup = document.getElementById('Chevronup')
-// // const searchFlightDate = document.getElementById('searchFlightDate')
+// const searchFlightDate = document.getElementById('searchFlightDate')
 // const searchFlightD = document.getElementById('searchFlight')
 const oneW = document.getElementById('oneW')
 

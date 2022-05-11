@@ -48,7 +48,7 @@
 
     
     </div>
-    <div class="w-full mx-auto rounded-lg bg-white shadow-lg p-5 h-1/2 text-gray-700" style="max-width: 600px">
+    <div class="w-full mx-auto rounded-lg z-0 bg-white shadow-lg p-5 h-1/2 text-gray-700" style="max-width: 600px">
         <div class="w-full pt-1 pb-5">
             <div class="bg-indigo-500 text-white overflow-hidden rounded-full w-20 h-20 -mt-16 mx-auto shadow-lg flex justify-center items-center">
               <i class="fa-solid fa-credit-card text-2xl"></i>
@@ -101,9 +101,9 @@
           </div>
       </div>
       <div class="flex flex-col justify-center px-4 py-6 md:p-6 xl:p-8 md:w-1/2 bg-gray-50 dark:bg-gray-800 space-y-6 sm:w-full xl:w-2/4" id="shipping">
-        <h3 class="text-xl dark:text-white font-semibold leading-5 text-gray-800 text-center">Ticket Actions</h3>
+        <h3 class="text-xl dark:text-white font-semibold leading-5 text-gray-800 ">Ticket Actions</h3>
 
-          <div class="flex lg:justify-start md:justify-center items-center space-x-3">
+          <div class="flex lg:justify-start  md:justify-center items-center space-x-3">
             <button class="hover:bg-green-700 duration-700 w-60 hidden dark:bg-white dark:text-gray-800 dark:hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-800 py-5  bg-green-500 text-base font-medium leading-4 text-white" id="ModifierUserFlight">Modifier Ticket</button>
             <button class="hover:bg-red-700 duration-700 w-60 dark:bg-white dark:text-gray-800 dark:hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-800 py-5  bg-red-600 text-base font-medium leading-4 text-white" id="CancelUserFlight">Cancel Ticket</button>
           </div>
@@ -173,7 +173,7 @@
 </form>
 
     </div>
-    <div class="w-full bg-blue-500 h-[1100px] flex justify-center absolute top-0 hidden overflow-hidden" id="redirectPage">
+    <div class="w-full bg-blue-500 h-[1100px] z-10 flex justify-center absolute top-0 hidden overflow-hidden" id="redirectPage">
         <div class="w-[500px] bg-white h-[500px] rounded-lg shadow-lg space-y-6 relative translate-y-80 ">
             <div class="w-full mt-4">
                 <img src="../public/img/images.png" class="block mx-auto">

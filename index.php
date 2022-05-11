@@ -13,6 +13,7 @@
     $router->map('GET', '/payment', 'payment','payment');
     $router->map('GET', '/test', 'test','test');
     $router->map('GET', '/multipulePassengers', 'multipulePassengers','multipulePassengers');
+    $router->map('GET', '/Reservationhistory', 'Reservationhistory','Reservationhistory');
     
     $router->map('POST', '/flightsInsert', 'requests/flightsInsert');
     $router->map('POST', '/insert', 'requests/insert');
@@ -32,6 +33,7 @@
     $router->map('POST', '/passenger', 'requests/passenger');
     $router->map('POST', '/multiPassengers', 'requests/multiPassengers');
     $router->map('POST', '/unique_id', 'requests/unique_id');
+    $router->map('POST', '/reservationAll', 'requests/reservationAll');
     
 
 

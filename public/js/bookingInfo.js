@@ -12,10 +12,6 @@ const one = document.getElementById('one')
 const selectMenu = document.getElementById('selectMenu')
 const logoutBtn = document.getElementById('logoutBtn')
 
-// document.getElementById('alertLogin').style.display = 'none'
-
-
-
 window.onload =  ()=> {
     const req = new XMLHttpRequest();
         req.open("POST", "http://localhost:8000/checkIflogged", true);
@@ -40,7 +36,6 @@ window.onload =  ()=> {
     req.send()
     
 }
-
 localStorage.setItem('travlPLan','Round Trip')
 function showDiv(divId, element){
     if(element.value == 1){
@@ -49,21 +44,21 @@ function showDiv(divId, element){
         document.getElementById(divId).style.display = 'none'
     }else if(element.value == 0){
         localStorage.setItem('travlPLan','Round Trip')
-        document.getElementById(divId).style.display = ''
+        document.getElementById('searchFlightArrival').style.display = ''
     }
 
-    // console.log(one.value,round.value)
-    // document.getElementById(divId).style.display = element.value == 1 ? 'block' : 'none'
 }
 function bookingId(e){
-    var bookingRowId = e
     let flightDepart = searchFlightDepart.value
+    
     let flightArrival = searchFlightArrival.value
-    if(flightDepart !== '', flightArrival !== ''){
-        localStorage.setItem('flightDepart',flightDepart)
-        localStorage.setItem('flightArrival',flightArrival)
+    var bookingRowId = e
+    localStorage.setItem('RowBooked',bookingRowId)
+    if(flightDepart !== '' , flightArrival !== ''){
+        sessionStorage.setItem('flightDepart',searchFlightDepart.value)
+        localStorage.setItem('flightArrival',searchFlightArrival.value)
+        console.log(flightDepart,flightArrival);
     }
-    console.log(e)
     const req = new XMLHttpRequest();
     req.open("POST", "http://localhost:8000/reservationHomePage", true);
     req.onload = () =>{
@@ -73,22 +68,27 @@ function bookingId(e){
                 console.log(data)
 
                 if(data == 'Session Not Set'){
-                    console.log(1234);
                     location.assign('/login')
                 }else if(selectMenu.value == 0 && searchFlightDepart.value == '' && searchFlightArrival.value == ''){
                     alertdiv.classList.add('displayAlert')
-                }else if(selectMenu.value == 1 && searchFlightArrival.value !== ''){
+                }else if(selectMenu.value == 1 && searchFlightArrival.value !== '' && searchFlightDepart.value !== ''){
                     localStorage.setItem('flightArrival','No Arrival Date')
-                    // alertdiv.classList.add('displayAlert')
-                }else if(selectMenu.value == 1 && searchFlightDepart.value == ''){
+                    localStorage.setItem('flightDepart',flightDepart)
+                }else if(selectMenu.value == 1 && searchFlightDepart.value == '' && searchFlightArrival.value == ''){
                     alertdiv.classList.add('displayAlert')
-                              
+                }else if(selectMenu.value == 1 && searchFlightDepart.value !== '' && data == 'setted'){
+                    localStorage.setItem('flightDepart',flightDepart)
+                    location.href = 'http://localhost:8000/payment'
+
                 }else if(alertdiv.classList.contains('displayAlert')){
                     alertdiv.classList.remove('displayAlert')
-                }else if(data == 'setted'){
-                    location.assign('/payment')
+                }else {
+                    
+                    location.href = 'http://localhost:8000/payment'
                 }
-
+                // }else if(data == 'setted'){
+                // }
+                console.log(searchFlightDepart.value);
                 
             }
         }
@@ -96,7 +96,7 @@ function bookingId(e){
     req.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
     req.send("rowBooked=" + bookingRowId)
 
-    searchFlightArrival.value ==  ''
+    // searchFlightArrival.value ==  ''
  }
 
 

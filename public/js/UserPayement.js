@@ -48,8 +48,8 @@ window.onload = ()=> {
                     // console.log(data)
                         // let sum = priceTotal.value
                         container.innerHTML = data
-                        total.textContent = sum
-                        ticketFLightPriceTotal.innerHTML = sum
+                        total.textContent = `${sum} Dh`
+                        ticketFLightPriceTotal.innerHTML = `${sum} Dh`
 
                         JSON.parse(child) === 0 ? Discount.innerHTML = 'No Discounts' : console.log('error');
                        
